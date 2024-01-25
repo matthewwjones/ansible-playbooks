@@ -1,0 +1,11 @@
+---
+  - name: "Simple playbook to run a command and capture output."
+    hosts: localhost
+    connection: local
+    tasks:
+
+    - name: "Execute a basic ls -ltr command and capture the output."
+      shell: "ls -ltr"
+      register: "output"
+
+    - debug: var=output.stdout_lines
